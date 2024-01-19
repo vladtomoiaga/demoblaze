@@ -20,13 +20,28 @@ public class LoginPage {
     private By logInButton = By.cssSelector("div#logInModal > div[role='document'] .btn.btn-primary");
 
     /** This method populate the Username field */
-    public void setUserName(String username) {
+    public void setUsername(String username) {
+        driver.findElement(usernameField).clear();
         driver.findElement(usernameField).sendKeys(username);
     }
 
     /** This method populate the Password field */
     public void setPassword(String password) {
+        driver.findElement(passwordField).clear();
         driver.findElement(passwordField).sendKeys(password);
+    }
+
+    /** This method populate the Username and Password fields */
+    public void setUsernameAndPassword(String username, String password) {
+        setUsername(username);
+        setPassword(password);
+    }
+
+    /** This method populate the Username and Password fields and click on the Log in button */
+    public void loginSetup(String username, String password) {
+        setUsername(username);
+        setPassword(password);
+        clickLoginButton();
     }
 
 
@@ -46,5 +61,38 @@ public class LoginPage {
     public HomePage clickLoginButton() {
         driver.findElement(logInButton).click();
         return new HomePage(driver);
+    }
+
+    // Getters
+    public By getLogInText() {
+        return logInText;
+    }
+
+    public By getCloseSymbolButton() {
+        return closeSymbolButton;
+    }
+
+    public By getUsernameText() {
+        return usernameText;
+    }
+
+    public By getUsernameField() {
+        return usernameField;
+    }
+
+    public By getPasswordText() {
+        return passwordText;
+    }
+
+    public By getPasswordField() {
+        return passwordField;
+    }
+
+    public By getCloseButton() {
+        return closeButton;
+    }
+
+    public By getLogInButton() {
+        return logInButton;
     }
 }

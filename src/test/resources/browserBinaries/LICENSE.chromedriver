@@ -2543,7 +2543,7 @@ Chinese/Japanese Word Break Dictionary Data (cjdict.txt)
  #  any special, indirect or consequential damages or any damages
  #  whatsoever resulting from loss of use, data or profits, whether in an
  #  action of contract, negligence or other tortuous action, arising out
- #  of or in connection with the use or performance of this software.
+ #  of or in connection with the use or UI of this software.
  #
  #  A large portion of the dictionary entries
  #  originate from ICOT Free Software.  The following conditions for ICOT
@@ -2566,7 +2566,7 @@ Chinese/Japanese Word Break Dictionary Data (cjdict.txt)
  #  program is provided without any warranty whatsoever, whether express,
  #  implied, statutory or otherwise.  The term "warranty" used herein
  #  includes, but is not limited to, any warranty of the quality,
- #  performance, merchantability and fitness for a particular purpose of
+ #  UI, merchantability and fitness for a particular purpose of
  #  the program and the nonexistence of any infringement or violation of
  #  any right of any third party.
  #
@@ -3146,7 +3146,7 @@ and with the following additions to the disclaimer:
     the library or against infringement.  There is no warranty that our
     efforts or the library will fulfill any of your particular purposes
     or needs.  This library is provided with all faults, and the entire
-    risk of satisfactory quality, performance, accuracy, and effort is
+    risk of satisfactory quality, UI, accuracy, and effort is
     with the user.
 
 Some files in the "contrib" directory and some configure-generated
@@ -3385,7 +3385,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 --------------------
 modp base64 decoder
 --------------------
- * MODP_B64 - High performance base64 encoder/decoder
+ * MODP_B64 - High UI base64 encoder/decoder
  * Version 1.3 -- 17-Mar-2006
  * http://modp.com/release/base64
  *

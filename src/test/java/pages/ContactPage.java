@@ -24,16 +24,19 @@ public class ContactPage {
 
     /** This method populate the Contact Email field */
     public void setContactEmail(String email) {
+        driver.findElement(contactEmailField).clear();
         driver.findElement(contactEmailField).sendKeys(email);
     }
 
     /** This method populate the Contact Name field */
     public void setContactName(String name) {
+        driver.findElement(contactNameField).clear();
         driver.findElement(contactNameField).sendKeys(name);
     }
 
     /** This method populate the Message field */
     public void setMessage(String message) {
+        driver.findElement(messageField).clear();
         driver.findElement(messageField).sendKeys(message);
     }
 
@@ -54,5 +57,47 @@ public class ContactPage {
     public HomePage clickSendMessageButton() {
         driver.findElement(sendMessageButton).click();
         return new HomePage(driver);
+    }
+
+    // Getters
+
+    public By getNewMessageText() {
+        return newMessageText;
+    }
+
+    public By getCloseSymbolButton() {
+        return closeSymbolButton;
+    }
+
+    public By getContactEmailText() {
+        return contactEmailText;
+    }
+
+    public By getContactEmailField() {
+        return contactEmailField;
+    }
+
+    public By getContactNameText() {
+        return contactNameText;
+    }
+
+    public By getContactNameField() {
+        return contactNameField;
+    }
+
+    public By getMessageText() {
+        return messageText;
+    }
+
+    public By getMessageField() {
+        return messageField;
+    }
+
+    public By getCloseButton() {
+        return closeButton;
+    }
+
+    public By getSendMessageButton() {
+        return sendMessageButton;
     }
 }

@@ -1,20 +1,21 @@
 package util;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import pages.HomePage;
 
 public class BaseTests {
-    public WebDriver driver;
+    public EventFiringWebDriver driver;
     protected HomePage homePage;
 
     @BeforeClass
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "src/test/resources/browserBinaries/chromedriver.exe");
-        driver = new ChromeDriver();
+        driver = new EventFiringWebDriver(new ChromeDriver());
+        driver.register(new EventReporter());
+        //driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
         driver.get("https://demoblaze.com/index.html");
         homePage = new HomePage(driver);
         driver.manage().window().maximize();
@@ -22,16 +23,21 @@ public class BaseTests {
     }
 
 //    @AfterClass
-//    public void logOut() {
-//        try {
-//            driver.findElement(By.linkText("Log out")).click();
-//        } catch (Exception e) {
-//            e.printStackTrace();
+//    public void recordFailure(ITestResult result){
+//        if(ITestResult.FAILURE == result.getStatus())
+//        {
+//            var camera = (TakesScreenshot)driver;
+//            File screenshot = camera.getScreenshotAs(OutputType.FILE);
+//            try{
+//                Files.move(screenshot, new File("src/test/resources/screenshots/" + result.getName() + ".png"));
+//            }catch(IOException e){
+//                e.printStackTrace();
+//            }
 //        }
 //    }
 
-//    @AfterClass
-//    public void tearDown() {
-//        driver.quit();
-//    }
+    @AfterClass
+    public void tearDown() {
+        driver.quit();
+    }
 }
